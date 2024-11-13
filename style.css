@@ -18,7 +18,7 @@ body{
 }
 
 #titulo{
-    margin-left: 9%;
+    margin-left: 18%;
     font-family: "Honk", system-ui;
     font-optical-sizing: auto;
     font-weight: 400;
@@ -73,6 +73,64 @@ body{
     cursor: pointer;
 }
 
+#lista input[type="checkbox"] {
+    accent-color: palevioletred;
+    width: 18px;
+    height: 18px;
+    cursor: pointer; 
+    border-radius: 3px;
+}
+
+input[type="text"] {
+    width: 30%;
+    padding: 6px;
+    font-family: "Quicksand", sans-serif;
+    font-size: 1em;
+    color: #333;
+    background-color: rgb(251, 251, 251);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: palevioletred;
+    background-color: rgb(254, 240, 243);
+    box-shadow: 0 0 5px palevioletred;
+}
+
+input[type="text"]:hover {
+    background-color: rgb(254, 225, 230);
+}
+
+input[type="date"] {
+    padding: 6px;
+    font-family: "Quicksand", sans-serif;
+    font-size: 0.6em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+    background-color: rgb(251, 251, 251);
+    color: #333;
+    margin-left: 10px;
+}
+
+input[type="date"]::before {
+    color: palevioletred;
+}
+
+input[type="date"]:focus {
+    outline: none;
+    border-color: palevioletred;
+    box-shadow: 0 0 5px palevioletred;
+}
+
+input[type="date"]:hover {
+    background-color: rgb(254, 201, 219);
+}
+
 button.excluir {
     font-size: 0.9em;
     background: rgb(251, 251, 251);
@@ -96,8 +154,27 @@ button.excluir:hover {
     text-shadow: none;
 }
 
-button.excluir::before {
-    font-size: 16px;
+button.editar {
+    font-size: 0.9em;
+    background: rgb(251, 251, 251);
+    border: 0;
+    border-radius: 5px;
+    color: palevioletred;
+    padding: 0.2em 0.6em;
+    padding-top: 0.6em;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+button.editar svg {
+    fill: palevioletred;
+}
+
+button.editar:hover {
+    background: rgb(254, 201, 219);
+    box-shadow: inset 2px 2px 2px rgba(0,0,0,0.2);
+    text-shadow: none;
 }
 
 footer{
