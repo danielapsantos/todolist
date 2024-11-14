@@ -21,6 +21,16 @@ function adicionar() { //adiciona o item na lista
         const texto = document.createElement("span");
         texto.textContent = " " + valor +(data ? ` - ${data}` : "");
 
+        checkB.addEventListener("change", function() {
+            if(checkB.checked) {
+                texto.classList.add("riscado");
+                document.getElementById("concluidos").appendChild(criar);
+            } else {
+                texto.classList.remove("riscado")
+                document.getElementById("lista").appendChild(criar);
+            }
+        });
+
         const excluirBton = document.createElement("button"); //excluir o item
         excluirBton.textContent = " ";
         excluirBton.classList.add("excluir");

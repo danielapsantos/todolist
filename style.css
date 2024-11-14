@@ -10,7 +10,7 @@ body{
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    margin-left: 36%;
+    margin-left: 30%;
     margin-top: 2%;
     flex-direction: column;
     padding-bottom: 80px;
@@ -18,7 +18,7 @@ body{
 }
 
 #titulo{
-    margin-left: 18%;
+    margin-left: 25%;
     font-family: "Honk", system-ui;
     font-optical-sizing: auto;
     font-weight: 400;
@@ -28,15 +28,16 @@ body{
         "SHLN" 50;
 }
 
-#lista{
+#lista, #concluidos {
     text-transform: capitalize;
     width: 100%;
     max-width: 500px;
     list-style: none;
     padding: 0;
+    margin-left: 6%;
 }
 
-#lista li {
+#lista li, #concluidos li {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -52,15 +53,17 @@ body{
 }
 
 #botao{
-    font-size: 0.9em;
+    font-size: 1em;
     background: rgb(251, 251, 251);
     border: 0;
     border-radius: 5px;
-    margin-bottom: 1em;
     color: palevioletred;
-    padding: 0.2em 0.6em;
+    height: 38px;
+    width: 50px;
+    padding: 0 10px;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
 }
 
 #botao:hover{
@@ -81,6 +84,34 @@ body{
     border-radius: 3px;
 }
 
+#item, #data {
+    padding: 10px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 1em;
+    width: 250px;
+    box-sizing: border-box;
+}
+
+#lista, #concluidos {
+    flex: 1;
+}
+
+.container {
+    display: flex;
+    align-items: flex-start;
+    gap: 41%;
+    width: 100%;
+    max-width: 800px;
+    margin: 0;
+}
+.grupo {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+}
+
 input[type="text"] {
     width: 30%;
     padding: 6px;
@@ -91,24 +122,27 @@ input[type="text"] {
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+input[type="text"]::before {
+    color: palevioletred;
 }
 
 input[type="text"]:focus {
     outline: none;
     border-color: palevioletred;
-    background-color: rgb(254, 240, 243);
     box-shadow: 0 0 5px palevioletred;
 }
 
 input[type="text"]:hover {
-    background-color: rgb(254, 225, 230);
+    background-color: rgb(254, 201, 219);
 }
 
 input[type="date"] {
-    padding: 6px;
+    width: 15;
+    padding: 7px;
     font-family: "Quicksand", sans-serif;
-    font-size: 0.6em;
+    font-size: 0.8em;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
@@ -129,6 +163,11 @@ input[type="date"]:focus {
 
 input[type="date"]:hover {
     background-color: rgb(254, 201, 219);
+}
+
+.riscado {
+    text-decoration: line-through;
+    color: #999;
 }
 
 button.excluir {
@@ -178,7 +217,7 @@ button.editar:hover {
 }
 
 footer{
-    text-align: center;
+    text-align: end;
     padding: 20px 0;
     font-size: 0.9rem;
     color: #333;
