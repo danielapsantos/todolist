@@ -8,20 +8,13 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Honk&display=swap" rel="stylesheet">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Honk&family=Quicksand&display=swap" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Quicksand&display=swap" rel="stylesheet">
 
     <title>TO DO LIST</title>
 </head>
 <body>
 
+    <div class="pagina">
     <div>
         <h1 id="titulo">TO DO LIST</h1>
         <br>
@@ -31,6 +24,9 @@
         <div class="grupo">
             <label>Adicione uma tarefa:</label>
             <input type="text" name="item" id="item" placeholder="Insira a tarefa...">
+            <label>Descrição:</label>
+            <input type="text" id="descricao" name="descricao" placeholder="Insira uma descrição...">
+            <label>Data:</label>
             <input type="date" id="data" name="data">
             <button id="botao" type="button"><strong> + </strong></button>    
         </div>
@@ -38,17 +34,17 @@
     <br>
     
     <div class="container">
-        <div class="grupo">
+        <div class="filho-1">
             <h3>Pendências:</h3>
             <ul id="lista"></ul>
         </div>
 
-        <div class="grupo">
+        <div class="filho-2">
             <h3>Concluídos:</h3>
             <ul id="concluidos"></ul>
         </div>
     </div>
-        
+</div>        
 <script src="./script.js" dafer></script>
 
 <footer>
