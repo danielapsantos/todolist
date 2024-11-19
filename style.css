@@ -5,6 +5,11 @@
 }
 
 body{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    margin: 0;
     background-image: url('assets/s-background.jpg');
     background-size: cover;
     background-position: center;
@@ -13,54 +18,72 @@ body{
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    margin-left: 25%;
-    margin-top: 2%;
-    flex-direction: column;
     padding-bottom: 80px;
-    padding-top: 0.2px;
-    height: 100vh;
+    padding-top: 100px;
 }
 
-body::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(246, 174, 253, 0.5);
-    z-index: -1;
+.pagina {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 15px; 
+    width: 80%; 
+    max-width: 800px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-#titulo{
+#titulo {
     margin-left: 35%;
     font-family: "Fredericka the Great", serif;
     font-weight: 400;
     font-style: normal;
 }
 
+.container {
+    display: flex;
+    align-items: flex-start;
+    column-gap: 20%;
+    width: 80%;
+    max-width: 1200px;
+    margin: 0;
+}
+
+.filho-1,
+.filho-2 {
+    flex: 1;
+    max-width: 45%;
+}
+
 #lista, #concluidos {
-    text-transform: capitalize;
-    width: 100%;
-    max-width: 500px;
     list-style: none;
     padding: 0;
-    margin-left: 6%;
+    text-transform: capitalize;
+    width: 48%;
 }
 
 #lista li, #concluidos li {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+
+    width: 100%;
     background: white;
-    padding: 5px;
+    padding: 10px;
     margin-bottom: 5px;
     border-radius: 5px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
-#lista span {
-    flex: 1;
-    margin-left: 20px;
+#lista li span {
+    font-size: 1em;
+    margin-bottom: 5px;
+}
+
+#concluidos li small {
+    font-size: 0.85em;
+    color: #666;
+}
+
+.grupo {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+    justify-content: center;
 }
 
 #botao{
@@ -92,10 +115,10 @@ body::before {
     height: 18px;
     cursor: pointer; 
     border-radius: 3px;
+    padding: 0;
 }
 
-#item, #data {
-    padding: 10px;
+#item, #data, #descricao {
     height: 40px;
     border-radius: 5px;
     border: 1px solid #ddd;
@@ -104,33 +127,48 @@ body::before {
     box-sizing: border-box;
 }
 
-#lista, #concluidos {
-    flex: 1;
+#descricao {
+    max-width: 296px;
+    list-style: none;
+    padding: 0px;
+    margin-top: 10px;
+    max-width: 400px;
+    height: 40px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 1em;
+    font-family: "Quicksand", sans-serif;
+    font-style: italic;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 }
 
-.pagina {
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 30px;
-    border-radius: 15px; 
-    width: 80%; 
-    max-width: 800px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+textarea {
+    padding: 10px;
+    height: 80px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 1em;
+    font-family: "Quicksand", sans-serif;
+    resize: none;
+    box-sizing: border-box;
+    background-color: rgb(251, 251, 251);
+    color: #333;
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    column-gap: 35%;
-    width: 80%;
-    max-width: 800px;
-    margin: 0;
+textarea:focus {
+    outline: none;
+    border-color: palevioletred;
+    box-shadow: 0 0 5px palevioletred;
 }
 
-.grupo {
-    display: flex;
-    align-items: center;
-    gap: 10px; 
+textarea:hover {
+    background-color: rgb(254, 201, 219);
+}
+
+textarea:before {
+    color: palevioletred;
 }
 
 input[type="text"] {
@@ -145,7 +183,7 @@ input[type="text"] {
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
 }
 
-input[type="text"]::before {
+input[type="text"]:before {
     color: palevioletred;
 }
 
@@ -169,10 +207,9 @@ input[type="date"] {
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
     background-color: rgb(251, 251, 251);
     color: #333;
-    margin-left: 10px;
 }
 
-input[type="date"]::before {
+input[type="date"]:before {
     color: palevioletred;
 }
 
@@ -251,23 +288,46 @@ footer{
 }
 
 @media (max-width: 768px) {
-    body {
-        padding: 10px;
-    }
-
-    form {
+    .container {
         flex-direction: column;
+        align-items: center;
+        gap: 20px;
     }
 
-    #item {
+    .filho-1, 
+    .filho-2 {
+        max-width: 100%;
+    }
+
+    .grupo {
+        justify-content: center;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    textarea {
+        max-width: 90%;
+    }
+
+    #lista li, 
+    #concluidos li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    #titulo {
+        font-size: 1.5em;
+    }
+
+    .pagina {
+        width: 95%;
+        padding: 20px;
+    }
+
+    button {
         width: 100%;
-    }
-
-    #botao {
-        width: 100%;
-    }
-
-    #lista li {
-        flex-wrap: wrap;
+        text-align: center;
     }
 }

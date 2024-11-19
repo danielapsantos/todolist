@@ -22,30 +22,31 @@
 
     <form>
         <div class="grupo">
-            <label>Adicione uma tarefa:</label>
+            <label for="item">Adicione uma tarefa:</label>
             <input type="text" name="item" id="item" placeholder="Insira a tarefa...">
-            <label>Descrição:</label>
-            <input type="text" id="descricao" name="descricao" placeholder="Insira uma descrição...">
-            <label>Data:</label>
+            <label for="data">Data:</label>
             <input type="date" id="data" name="data">
             <button id="botao" type="button"><strong> + </strong></button>    
         </div>
+        <div class="grupo">
+            <label for="descricao">Descrição:</label>
+            <textarea name="descricao" id="descricao" rows="3" placeholder="Insira uma descrição..."></textarea>
+        </div>
     </form>
     <br>
-    
     <div class="container">
         <div class="filho-1">
             <h3>Pendências:</h3>
-            <ul id="lista"></ul>
+            <ul class="lista" id="lista"></ul>
         </div>
 
         <div class="filho-2">
             <h3>Concluídos:</h3>
-            <ul id="concluidos"></ul>
+            <ul class="lista" id="lista"></ul>
         </div>
     </div>
 </div>        
-<script src="./script.js" dafer></script>
+<script src="./script.js" defer></script>
 
 <footer>
     <div class="dev">

@@ -7,10 +7,11 @@ document.getElementById("item").addEventListener("keydown", function (event) {
 });
 
 function adicionar() { //adiciona o item na lista
-    console.log("Função adicionar item na lista");
+    console.log("chamando a função");
 
     const valor = document.getElementById("item").value;
     const data = document.getElementById("data").value;
+    const descricao = document.getElementById("descricao").value;
 
     if (valor.trim() !== "") {
         const criar = document.createElement("li");
@@ -18,8 +19,19 @@ function adicionar() { //adiciona o item na lista
         const checkB = document.createElement("input");
         checkB.type = "checkbox";
 
+        const container = document.createElement("div");
+
         const texto = document.createElement("span");
         texto.textContent = " " + valor +(data ? ` - ${data}` : "");
+
+        const desc = document.createElement("small");
+        desc.textContent = descricao ? descricao : "";
+        desc.style.display = "block";
+        desc.style.fontSize = "0.8em"
+        desc.style.color = "666";
+
+        container.appendChild(texto);
+        container.appendChild(desc);
 
         checkB.addEventListener("change", function() {
             if(checkB.checked) {
@@ -86,13 +98,15 @@ function adicionar() { //adiciona o item na lista
         //criar item da lista
         criar.appendChild(checkB);
         criar.appendChild(texto);
-        criar.appendChild(editarBton)
+        criar.appendChild(container);
+        criar.appendChild(editarBton);
         criar.appendChild(excluirBton);
 
         document.getElementById("lista").appendChild(criar);
 
         document.getElementById("item").value = "";
         document.getElementById("data").value = "";
+        document.getElementById("descricao").value = "";
     } else {
         alert("Por favor, digite um item!");
     }
